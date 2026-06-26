@@ -1,0 +1,161 @@
+/* Resets Básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f9f6; /* Tom off-white suave e natural */
+    color: #333d35; /* Verde-escuro acinzentado para leitura confortável */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Principal (Layout Lado a Lado no Desktop, Empilhado no Mobile) */
+.container {
+    background: #ffffff;
+    max-width: 1100px;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Seções */
+.banner-section, .content-section {
+    flex: 1;
+}
+
+/* Simulação da Imagem com CSS e Degradê (Inspirada na paleta da imagem anterior) */
+.hero-image {
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(135deg, #e3ece4 0%, #c2d5c6 50%, #b2af9d 100%);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+}
+
+/* Máscara escura suave para dar leitura ao texto sobre a imagem */
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.overlay-text {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.overlay-text .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* Área de Texto */
+.content-section {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #2c4030;
+    margin-bottom: 20px;
+}
+
+.text-block p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555e56;
+}
+
+/* Botões e Elementos Dinâmicos */
+.btn-primary {
+    background-color: #597460; /* Verde oliva calmo */
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #455a4a;
+    transform: translateY(-2px);
+}
+
+/* Estado Inicial da Mensagem Oculta */
+.hidden-message {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    margin-top: 0;
+    background-color: #f0f5f1;
+    border-left: 4px solid #597460;
+    border-radius: 4px;
+}
+
+/* Classe ativada via JavaScript */
+.hidden-message.show {
+    max-height: 150px;
+    opacity: 1;
+    margin-top: 25px;
+    padding: 15px;
+}
+
+/* --- Responsividade (Para telas maiores/Desktop) --- */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        min-height: 550px;
+    }
+    
+    .hero-image {
+        height: 100%;
+        padding: 40px;
+    }
+
+    .content-section {
+        padding: 50px;
+    }
+
+    .overlay-text h1 {
+        font-size: 2.8rem;
+    }
+}
