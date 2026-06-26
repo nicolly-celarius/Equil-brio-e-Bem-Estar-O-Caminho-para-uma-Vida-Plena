@@ -1,0 +1,20 @@
+document.addEventListener("DOMContentLoaded", function() {
+    
+    const botaoJornada = document.getElementById("btn-reflorestar");
+    const mensagemSucesso = document.getElementById("mensagem-sucesso");
+
+    // Adiciona evento de clique ao botão
+    botaoJornada.addEventListener("click", function() {
+        // Revela a mensagem com efeito suave de transição (CSS)
+        mensagemSucesso.classList.toggle("show");
+        
+        // Altera levemente o texto do botão após o clique para dar feedback
+        if(mensagemSucesso.classList.contains("show")) {
+            botaoJornada.textContent = "Jornada Iniciada!";
+            botaoJornada.style.background = "#455a4a";
+        } else {
+            botaoJornada.textContent = "Iniciar Minha Jornada";
+            botaoJornada.style.background = "#597460";
+        }
+    });
+});
